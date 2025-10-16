@@ -24,12 +24,15 @@ export default function Square({ value, onClick, disabled, ...rest }) {
 }
 
 Square.propTypes = {
+  /** The mark to show in the square: 'X', 'O', or null for empty */
   value: PropTypes.oneOf(['X', 'O', null]),
+  /** Click handler for the square */
   onClick: PropTypes.func.isRequired,
-  disabled: PropTypes.bool
+  /** Disabled state of the square */
+  disabled: PropTypes.bool,
 };
 
 Square.defaultProps = {
   value: null,
-  disabled: false
+  disabled: false,
 };
