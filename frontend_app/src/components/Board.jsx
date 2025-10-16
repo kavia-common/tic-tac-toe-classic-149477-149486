@@ -1,4 +1,5 @@
 import Square from './Square';
+import PropTypes from 'prop-types';
 
 /**
  * Board renders a 3x3 grid of Square components.
@@ -19,3 +20,13 @@ export default function Board({ squares, onSquareClick, disabled }) {
     </div>
   );
 }
+
+Board.propTypes = {
+  squares: PropTypes.arrayOf(PropTypes.oneOf(['X', 'O', null])).isRequired,
+  onSquareClick: PropTypes.func.isRequired,
+  disabled: PropTypes.bool
+};
+
+Board.defaultProps = {
+  disabled: false
+};
